@@ -3,7 +3,7 @@ version: '3.1'
 
 services:
   sonarqube:
-    image: sonarqube:7.5-community
+    image: sonarqube:lts
     ports:
       - "9000:9000"
     depends_on:
@@ -21,7 +21,7 @@ services:
       - sonarqube_extensions:/opt/sonarqube/extensions
 
   db:
-    image: postgres:10
+    image: postgres:12
     networks:
       - sonarnet
     environment:
